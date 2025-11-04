@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewa Rabbits - Grocery Delivery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 30px;
+            padding: 60px 80px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+        }
+
+        .rabbit-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .rabbit {
+            font-size: 100px;
+            animation: hop 2s ease-in-out infinite;
+        }
+
+        @keyframes hop {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            font-size: 56px;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .feature-icon {
+            font-size: 28px;
+        }
+
+        .website {
+            margin-top: 35px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .website-label {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .website-url {
+            font-size: 36px;
+            color: #667eea;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .website-url::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .website-url:hover::after {
+            transform: scaleX(1);
+        }
+
+        .website-url:hover {
+            transform: translateY(-3px);
+            color: #764ba2;
+        }
+
+        .grocery-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+            font-size: 32px;
+            opacity: 0.8;
+        }
+
+        .download-btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .tagline {
+                font-size: 20px;
+            }
+
+            .website-url {
+                font-size: 28px;
+            }
+
+            .features {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="content">
+                <div class="logo-section">
+                    <div class="rabbit-icon">
+                        <div class="rabbit">🐰</div>
+                    </div>
+                    <h1>Rewa Rabbits</h1>
+                    <p class="tagline">Fresh Groceries, Delivered Fast!</p>
+                </div>
+
+                <div class="grocery-icons">
+                    <span>🥬</span>
+                    <span>🥕</span>
+                    <span>🍎</span>
+                    <span>🥛</span>
+                    <span>🍞</span>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>Quick Delivery</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🌿</span>
+                        <span>Fresh Products</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">💯</span>
+                        <span>Best Quality</span>
+                    </div>
+                </div>
+
+                <div class="website">
+                    <div class="website-label">Visit Us</div>
+                    <a href="https://www.rearabbits.com" class="website-url" target="_blank">
+                        www.rearabbits.com
+                    </a>
+                </div>
+
+                <button class="download-btn" onclick="downloadImage()">Download Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadImage() {
+            // Create a canvas to capture the card
+            const card = document.querySelector('.card');
+            const scale = 2; // Higher resolution
+
+            // Use html2canvas if available, otherwise show instructions
+            if (typeof html2canvas !== 'undefined') {
+                html2canvas(card, {
+                    scale: scale,
+                    backgroundColor: null
+                }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'rewa-rabbits-grocery-delivery.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+                });
+            } else {
+                alert('To download: Right-click on the image and select "Save As" or take a screenshot!');
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
